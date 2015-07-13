@@ -1,0 +1,287 @@
+//
+//The MIT License (MIT)
+//
+//Copyright (c) 2015 DDDGamer
+//
+//Permission is hereby granted, free of charge, to any person obtaining a copy
+//of this software and associated documentation files (the "Software"), to deal
+//in the Software without restriction, including without limitation the rights
+//to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//copies of the Software, and to permit persons to whom the Software is
+//furnished to do so, subject to the following conditions:
+//
+//The above copyright notice and this permission notice shall be included in all
+//copies or substantial portions of the Software.
+//
+//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//SOFTWARE.
+
+/*
+ * Monokai Denis Theme
+ *
+ * Defines all the variables that one can configure in a theme. This should
+ * contain all variables / mixins for UI styling that we want to be able to
+ * change in a theme.
+ *
+ * Throughout the rest of the LESS files we should _only_ use color
+ * variable names that are on the LHS of the list below. So, if we
+ * need a new color for some UI element, we should add a variable
+ * in this file.
+ */
+
+
+/* Overall Colors */
+@pink-transp:		rgba(249, 38, 114, 0.75);
+@pink: 				#F92672;
+@purple: 			#AE81FF;
+@blue-light:		#66D9EF;
+@green: 			#A6E22E;
+@green-bright:		#1dff00;
+@yellow-light:		#E6DB74;
+@orange:			#FD971F;
+
+@white-transp:		rgba(255, 255, 255, .1);
+@white: 			#F8F8F2;
+@gray-1:			#767676;
+@gray-2:			#8C8C8C;
+@gray-3:			#3C3F41;
+@gray-4:			#333333;
+@black:				#242424;
+@black-transp:		rgba(0, 0, 0, .1);
+
+
+/* Define some variables used in multiple places */
+@background: 		#242424;
+@background-alt:	#1D1F21;
+@foreground: 		#DDDDDD;
+
+
+/* =============================== */
+/* ====== Code color scheme ====== */
+/* =============================== */
+
+
+/* cm-keyword        : var, function, !important */
+/* cm-tag            : HTML elements */
+/* cm-bracket        : html < </ > */
+.cm-keyword, .cm-tag, .cm-bracket {
+	color: @pink;
+}
+
+/* cm-atom           : #id */
+/* cm-number         : 20 */
+.cm-atom, .cm-number, .cm-link {
+	color: @purple;
+}
+
+/* cm-meta           : @font-face */
+/* cm-qualifier      : .box */
+/* cm-builtin        : define, substr, const */
+/* cm-attribute      : class="" id="" */
+.cm-meta, .cm-qualifier, .cm-builtin, .cm-attribute {
+	color: @green;
+}
+
+/* cm-string         : "string" */
+/* cm-string-2       : some CSS values */
+.cm-string, .cm-string-2 {
+	color: @yellow-light;
+}
+
+/* cm-property       : getElementbyId, CSS properties */
+/* cm-variable-2     : for key in [this], Markdown li */
+.cm-property, .cm-variable-2 {
+	color: @blue-light;
+}
+
+/* cm-def            : @include, [this] */
+.cm-def {
+	color: @orange;
+}
+
+/* cm-variable-3     : :after */
+/* cm-operator       : CoffeeScript ->, CSS colons */
+/* cm-variable       : $, i */
+.cm-variable-3, .cm-operator, .cm-variable {
+	color: @white;
+}
+
+/* cm-comment        : // comments */
+.cm-comment {
+	color: @gray-2;
+}
+
+/* cm-error          : color : #4444; */
+.cm-error {
+	background: @pink;
+	color: @white !important;
+}
+
+
+/* =============================== */
+/* ====== Brackets UI colors ===== */
+/* =============================== */
+
+.CodeMirror, .CodeMirror-scroll {
+	background: @background;
+	color: @white;
+}
+
+.CodeMirror-gutters {
+	background: @background;
+}
+
+.CodeMirror-linenumbers {
+	background: @black-transp;
+}
+
+.CodeMirror-foldgutter {
+	background: @black-transp;
+	border-right: 1px solid @white-transp;
+}
+
+.CodeMirror-foldgutter-open:after {
+	font-size: 1.3em;
+	color: @orange;
+	text-shadow: 0 0 8px @orange;
+}
+
+.CodeMirror-foldgutter-folded:after {
+	content: "+";
+	font-size: 1.3em;
+	font-weight: 700;
+	background: transparent !important;
+	color: @green-bright !important;
+	text-shadow: 0 0 10px @green-bright;
+}
+
+.CodeMirror-foldgutter-folded {
+	padding-top: 2px;
+}
+
+.CodeMirror-foldgutter-open {
+	padding-top: 1px;
+}
+
+.CodeMirror-foldmarker {
+	display: inline-block;
+	border-radius: 0.35em;
+	padding: 0 2px;
+	border: 0;
+	font-size: .75em;
+	color: @green-bright !important;
+	text-shadow: 0 0 10px @green-bright;
+	background: @white-transp;
+}
+
+.CodeMirror-foldmarker:after {
+	content: '\2022\2022\2022';
+	position: relative;
+	top: 1px;
+}
+
+.CodeMirror-focused .CodeMirror-activeline-background,
+.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt,
+.inline-widget .CodeMirror-gutter-elt {
+	background: @gray-3;
+}
+
+.CodeMirror-linenumber {
+	color: @gray-1;
+}
+
+.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt {
+	color: @white;
+}
+
+.CodeMirror-cursor {
+	border-left: 1px solid @white !important;
+}
+
+.CodeMirror-selected {
+	background: @gray-3;
+	opacity: .23;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+	background: @yellow-light;
+	color: @black;
+}
+
+.CodeMirror-matchingbracket {
+	background: transparent !important;
+	color: @green-bright !important;
+	text-shadow: 0 0 10px @green-bright;
+	font-weight: 700;
+}
+
+.CodeMirror-nonmatchingbracket {
+	background: @pink !important;
+	color: @white !important;
+}
+
+.CodeMirror-matchingtag {
+	background: @white-transp;
+}
+
+.CodeMirror-overwrite .CodeMirror-cursor {
+	border-left: none !important;
+	border-bottom: 1px solid @white;
+}
+
+.CodeMirror-searching {
+	background: @yellow-light;
+}
+
+.searching-current-match {
+	background: @orange;
+}
+
+/* =============================== */
+/* ========== Extensions ==========*/
+/* =============================== */
+
+/**
+* Brackets Css Color Preview (https://github.com/cmgddd/Brackets-css-color-preview)
+* ---------------------------------------------------------------------------------
+*/
+
+.ico-cssColorPreview {
+	border: 1px dotted @white-transp;
+	border-radius: 40%;
+	width: 8px;
+	height: 8px;
+	margin-bottom: 2px;
+}
+
+/**
+* Brackets Git (https://github.com/zaggino/brackets-git)
+* ---------------------------------------------------------------------------------
+*/
+
+.brackets-git-gutter-modified, .brackets-git-gutter-removed, .brackets-git-gutter-added {
+	width: 3px;
+}
+
+/* cm-matchhighlight : Match Highlighter (https://github.com/gintau/bracket-match-highlighter) */
+.cm-matchhighlight {
+	background: @gray-4;
+}
+
+
+/* =============================== */
+/* ====== Non-editor styling ===== */
+/* =============================== */
+.image-view,
+.not-editor {
+	background-color: @background-alt;
+}
+
+.view-pane .image-view {
+	color: @foreground;
+}
