@@ -15,11 +15,8 @@ Screenshots
 ### JavaScript
 ![HTML](screenshots/js.png)
 
-### JSON
-![HTML](screenshots/js.png)
-
 ### Images
-![HTML](screenshots/js.png)
+![HTML](screenshots/image.png)
 
 
 Installation
